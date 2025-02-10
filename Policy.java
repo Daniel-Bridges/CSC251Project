@@ -47,8 +47,8 @@ class Policy {
       this.policy_holder_last_name = policy_holder_last_name;
       this.policy_holder_age = policy_holder_age;
       this.policy_holder_smoking_status = policy_holder_smoking_status;
-      this.policy_holder_height = 000;
-      this.policy_holder_weight = 000;
+      this.policy_holder_height = policy_holder_height;
+      this.policy_holder_weight = policy_holder_weight;
    }
    
    // Setters
