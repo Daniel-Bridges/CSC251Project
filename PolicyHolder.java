@@ -1,107 +1,108 @@
 class PolicyHolder {
 
-   private String policy_holder_first_name;
-   private String policy_holder_last_name;
-   private int policy_holder_age;
-   private String policy_holder_smoking_status; // Either "smoker" or "non-smoker"
-   private double policy_holder_height; // in inches
-   private double policy_holder_weight; // in pounds
-
-   
-   /**
-   * No args constructor
-   */
-   public Policy() 
-   {
-      this.policy_holder_first_name = "John";
-      this.policy_holder_last_name = "Doe";
-      this.policy_holder_age = 00;
-      this.policy_holder_smoking_status = "none";
-      this.policy_holder_height = 00.00;
-      this.policy_holder_weight = 00.00;
-   }
+   private String first_name;
+   private String last_name;
+   private int age;
+   private String smoking_status; // Either "smoker" or "non-smoker"
+   private double height; // in inches
+   private double weight; // in pounds
    
    /**
      * Args constructor
      *
-     * @param policy_holder_first_name    Policy holders first name
-     * @param policy_holder_last_name  Policy holders last name
-     * @param policy_holder_age  Policy holders age
-     * @param policy_holder_smoking_status   Policy holder's smoking status 
-     * @param policy_holder_height  Policy holder's height
-     * @param policy_holder_weight  Policy holder's weight
+     * @param first_name    Policy holders first name
+     * @param last_name  Policy holders last name
+     * @param age  Policy holders age
+     * @param smoking_status   Policy holder's smoking status 
+     * @param height  Policy holder's height
+     * @param weight  Policy holder's weight
      */
-   public Policy(String policy_holder_first_name, 
-   String policy_holder_last_name, int policy_holder_age, String policy_holder_smoking_status, 
-   double policy_holder_height, double policy_holder_weight) 
+   public Policy(String first_name, 
+   String last_name, int age, String smoking_status, 
+   double height, double weight) 
    { 
-      this.policy_holder_first_name = policy_holder_first_name;
-      this.policy_holder_last_name = policy_holder_last_name;
-      this.policy_holder_age = policy_holder_age;
-      this.policy_holder_smoking_status = policy_holder_smoking_status;
-      this.policy_holder_height = policy_holder_height;
-      this.policy_holder_weight = policy_holder_weight;
+      this.first_name = first_name;
+      this.last_name = last_name;
+      this.age = age;
+      this.smoking_status = smoking_status;
+      this.height = height;
+      this.weight = weight;
+   }
+   
+   
+   /** Copy Constructor
+      @param obj is the object to copy
+   */
+   public PolicyHolder(PolicyHolder obj)
+   {
+   
+      this.first_name = obj.first_name;
+      this.last_name = obj.last_name;
+      this.age = obj.age;
+      this.smoking_status = obj.smoking_status;
+      this.height = obj.height;
+      this.weight = obj.weight;
    }
 
    
    /**
      * Sets the policy holder's first name.
      *
-     * @param policy_holder_first_name the policy holders first name
+     * @param first_name the policy holders first name
      */
-   public void set_policy_holder_first_name(String policy_holder_first_name)
+   public void set_first_name(String first_name)
    {
-      this.policy_holder_first_name = policy_holder_first_name;
+      this.first_name = first_name;
    }
    
    /**
      * Sets the policy holder's last name.
      *
-     * @param policy_holder_last_name the policy holders last name
+     * @param last_name the policy holders last name
      */
-   public void set_policy_holder_last_name(String policy_holder_last_name)
+   public void set_last_name(String last_name)
    {
-      this.policy_holder_last_name = policy_holder_last_name;
+      this.last_name = last_name;
    }
    
    /**
      * Sets the policy holder's age.
      *
-     * @param policy_holder_age the policy holders age name
+     * @param age the policy holders age name
      */
-   public void set_policy_holder_age(int policy_holder_age)
+   public void set_age(int age)
    {
-      this.policy_holder_age = policy_holder_age;
+      this.age = age;
    }
    
    /**
      * Sets the policy holder's smoking status.
      *
-     * @param policy_holder_smoking_status the policy holders smoking status
+     * @param smoking_status the policy holders smoking status
      */
-   public void set_policy_holder_smoking_status(String policy_holder_smoking_status)
+   public void set_smoking_status(String smoking_status)
    {
-      this.policy_holder_smoking_status = policy_holder_smoking_status;
+      this.smoking_status = smoking_status;
    }
    
    /**
      * Sets the policy holder's height.
      *
-     * @param policy_holder_height the policy holders height
+     * @param height the policy holders height
      */
-   public void set_policy_holder_height(double policy_holder_height)
+   public void set_height(double height)
    {
-      this.policy_holder_height = policy_holder_height;
+      this.height = height;
    }
    
    /**
      * Sets the policy holder's weight.
      *
-     * @param policy_holder_weight the policy holders weight
+     * @param weight the policy holders weight
      */
-   public void set_policy_holder_weight(double policy_holder_weight)
+   public void set_weight(double weight)
    {
-      this.policy_holder_weight = policy_holder_weight;
+      this.weight = weight;
    }
    
    /**
@@ -109,9 +110,9 @@ class PolicyHolder {
      *
      * @return the policy holders first name as a String
      */
-   public String get_policy_holder_first_name()
+   public String get_first_name()
    {
-      return this.policy_holder_first_name;
+      return this.first_name;
    }
    
    /**
@@ -119,9 +120,9 @@ class PolicyHolder {
      *
      * @return the policy holders last name as a String
      */
-   public String get_policy_holder_last_name()
+   public String get_last_name()
    {
-      return this.policy_holder_last_name;
+      return this.last_name;
    }
    
    /**
@@ -129,9 +130,9 @@ class PolicyHolder {
      *
      * @return the policy holders age as an in
      */
-   public int get_policy_holder_age()
+   public int get_age()
    {
-      return this.policy_holder_age;
+      return this.age;
    }
    
    /**
@@ -139,9 +140,9 @@ class PolicyHolder {
      *
      * @return the policy holders smoking status as a String
      */
-   public String get_policy_holder_smoking_status()
+   public String get_smoking_status()
    {
-      return this.policy_holder_smoking_status;
+      return this.smoking_status;
    }
    
    /**
@@ -149,9 +150,9 @@ class PolicyHolder {
      *
      * @return the policy holders height as a double
      */
-   public double get_policy_holder_height()
+   public double get_height()
    {
-      return this.policy_holder_height;
+      return this.height;
    }
    
    /**
@@ -159,9 +160,9 @@ class PolicyHolder {
      *
      * @return the policy holders weight as a double
      */
-   public double get_policy_holder_weight()
+   public double get_weight()
    {
-      return this.policy_holder_weight;
+      return this.weight;
    }
 
    /**
@@ -172,7 +173,22 @@ class PolicyHolder {
      */
    public double calculate_body_mass_index()
    {
-      return (policy_holder_weight * 703) / (policy_holder_height * policy_holder_height);
+      return (weight * 703) / (height * height);
+   }
+   
+   
+   /** toString method
+   @return a string containing the Policy Holder's information
+   */
+   public String toString()
+   {
+      return String.format("Policy holder's First Name: " + first_name +
+             "\nPolicy Holder's Last Name: " + last_name +
+             "\nPolicy Holder's Age: " + age + 
+             "\nPolicy Holder's Smoking Status: " + smoking_status +
+             "\nPolicy Holder's Height: " + height + 
+             "\nPolicy Holder's Weight: " + weight + 
+             "\nPolicy Holder's BMI: " + calculate_body_mass_index());
    }
    
 }
