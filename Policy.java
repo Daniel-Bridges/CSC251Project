@@ -2,15 +2,7 @@ class Policy {
    
    private int policy_number;
    private String provider_name;
-     
-   /**
-     * No args constructor
-     */
-   public Policy() 
-   {
-      this.policy_number = 0000;
-      this.provider_name = "none";
-   }
+   private PolicyHolder policy_holder;
    
    /**
      * Args constructor
@@ -18,11 +10,13 @@ class Policy {
      * @param policy_number   Unique number for each policy
      * @param provider_name   The policy provider's name
      */
-   public Policy(int policy_number, String provider_name) 
+   public Policy(int policy_number, String provider_name, PolicyHolder policy_holder) 
    { 
       this.policy_number = policy_number;
       this.provider_name = provider_name;
+      this.policy_holder = new PolicyHolder(policy_holder); // Copy Constructor
    }
+   
    
    // Setters
    
@@ -44,6 +38,17 @@ class Policy {
    public void set_provider_name(String provider_name)
    {
       this.provider_name = provider_name;
+   }
+   
+   
+   /**
+     * Sets the provider name.
+     *
+     * @param policy Holder - a Policy Holder
+     */
+   public void set_policy_holder(PolicyHolder policy_holder)
+   {
+      this.policy_holder = new PolicyHoldere(policy_holder);
    }
    
       
@@ -70,8 +75,19 @@ class Policy {
       return this.provider_name;
    }
    
+   
+   /**
+     * Gets the policy holder.
+     *
+     * @return a reference of a copy of the policy holder
+     */
+   public String get_policy_holder()
+   {
+      return new PolicyHolder(policy_holder)
+   }
       
    // Other Functions
+
    
    /**
      * Calculates the insurance price
@@ -82,14 +98,14 @@ class Policy {
    public double calculate_insurance_price()
    {
       double price = 600; // Base fee
-      double bmi = calculate_body_mass_index();
+      double bmi = policy_holder.calculate_body_mass_index();
       
-      if (policy_holder_age > 50) // If policy holder is older than 50
+      if (policy_holder.age > 50) // If policy holder is older than 50
       {
          price += 75;
       }
       
-      if (policy_holder_smoking_status.equals("smoker")) // If policy holder is a smoker
+      if (policy_holder.smoking_status.equals("smoker")) // If policy holder is a smoker
       {
          price += 100;
       }
@@ -101,5 +117,17 @@ class Policy {
       
       return price;
    }
+   
+   /** toString method
+   @return a string containing the Policy's information
+   */
+   public String toString()
+   {
+      return String.format("Policy Number: " + policy_number +
+               "\nProvider Name: " + provider_name + 
+               "\nPolicy Holder: " + policy_holder.toString() +
+               "\nPolicy Price: $" + calculate_insurance_price());
+   }
+
    
 }
