@@ -10,14 +10,14 @@ class PolicyHolder {
    /**
      * Args constructor
      *
-     * @param first_name    Policy holders first name
-     * @param last_name  Policy holders last name
-     * @param age  Policy holders age
-     * @param smoking_status   Policy holder's smoking status 
-     * @param height  Policy holder's height
-     * @param weight  Policy holder's weight
+     * @param first_name      -  Policy holders first name
+     * @param last_name       - Policy holders last name
+     * @param age             - Policy holders age
+     * @param smoking_status  - Policy holder's smoking status 
+     * @param height          - Policy holder's height
+     * @param weight          - Policy holder's weight
      */
-   public Policy(String first_name, 
+   public PolicyHolder(String first_name, 
    String last_name, int age, String smoking_status, 
    double height, double weight) 
    { 
@@ -188,7 +188,7 @@ class PolicyHolder {
              "\nPolicy Holder's Smoking Status: " + smoking_status +
              "\nPolicy Holder's Height: " + height + 
              "\nPolicy Holder's Weight: " + weight + 
-             "\nPolicy Holder's BMI: " + calculate_body_mass_index());
+             "\nPolicy Holder's BMI: %.2f", calculate_body_mass_index());
    }
    
 }
