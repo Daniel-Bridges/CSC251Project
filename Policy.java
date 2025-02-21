@@ -48,7 +48,7 @@ class Policy {
      */
    public void set_policy_holder(PolicyHolder policy_holder)
    {
-      this.policy_holder = new PolicyHoldere(policy_holder);
+      this.policy_holder = new PolicyHolder(policy_holder);
    }
    
       
@@ -81,9 +81,9 @@ class Policy {
      *
      * @return a reference of a copy of the policy holder
      */
-   public String get_policy_holder()
+   public PolicyHolder get_policy_holder()
    {
-      return new PolicyHolder(policy_holder)
+      return new PolicyHolder(policy_holder);
    }
       
    // Other Functions
@@ -100,12 +100,12 @@ class Policy {
       double price = 600; // Base fee
       double bmi = policy_holder.calculate_body_mass_index();
       
-      if (policy_holder.age > 50) // If policy holder is older than 50
+      if (policy_holder.get_age() > 50) // If policy holder is older than 50
       {
          price += 75;
       }
       
-      if (policy_holder.smoking_status.equals("smoker")) // If policy holder is a smoker
+      if (policy_holder.get_smoking_status().equals("smoker")) // If policy holder is a smoker
       {
          price += 100;
       }
@@ -125,8 +125,8 @@ class Policy {
    {
       return String.format("Policy Number: " + policy_number +
                "\nProvider Name: " + provider_name + 
-               "\nPolicy Holder: " + policy_holder.toString() +
-               "\nPolicy Price: $" + calculate_insurance_price());
+               "\n" + policy_holder.toString() +
+               "\nPolicy Price: $%.2f", calculate_insurance_price());
    }
 
    
