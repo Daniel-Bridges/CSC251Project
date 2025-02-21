@@ -42,7 +42,7 @@ class Policy {
    
    
    /**
-     * Sets the provider name.
+     * Sets the policy holder name.
      *
      * @param policy Holder - a Policy Holder
      */
